@@ -1,6 +1,6 @@
 package com.julyun.to_do_list_dto.controller;
 
-import com.julyun.to_do_list_dto.dto.SignupDTO;
+import com.julyun.to_do_list_dto.dto.SignupDto;
 import com.julyun.to_do_list_dto.model.User;
 import com.julyun.to_do_list_dto.repository.UserRepository;
 import jakarta.validation.Valid;
@@ -19,14 +19,14 @@ public class SignupController {
 
     @GetMapping("/signup")
     public String showSignup(Model model) {
-        model.addAttribute("signupDto", new SignupDTO());
+        model.addAttribute("signupDto", new SignupDto());
 
         return "signup";
     }
 
     @PostMapping("/signup")
     public String doSignup(
-            @Valid @ModelAttribute("signupDto") SignupDTO signupDTO,
+            @Valid @ModelAttribute("signupDto") SignupDto signupDTO,
             BindingResult bindingResult,
             Model model
     ) {
